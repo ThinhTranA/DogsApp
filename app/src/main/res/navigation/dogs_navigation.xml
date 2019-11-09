@@ -24,3 +24,4 @@
             app:destination="@id/listFragment" />
     </fragment>
 </navigation>
+

@@ -51,7 +51,7 @@ dependencies {
 
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
-    annotationProcessor "androidx.room-room-compiler:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
 
     implementation "androidx.navigation:navigation-fragment:$navVersion"
     implementation "androidx.navigation:navigation-ui:$navVersion"
