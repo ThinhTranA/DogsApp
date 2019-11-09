@@ -1,8 +1,10 @@
-package com.visualsharp.dogsapp;
+package com.visualsharp.dogsapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.visualsharp.dogsapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
