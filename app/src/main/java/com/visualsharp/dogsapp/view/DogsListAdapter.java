@@ -22,7 +22,7 @@ public class DogsListAdapter extends RecyclerView.Adapter<DogsListAdapter.DogVie
         this.dogsList = dogList;
     }
 
-    public void udpateDogsList(List<DogBreed> newDogsList){
+    public void updateDogsList(List<DogBreed> newDogsList){
         dogsList.clear();
         dogsList.addAll(newDogsList);
         notifyDataSetChanged();
