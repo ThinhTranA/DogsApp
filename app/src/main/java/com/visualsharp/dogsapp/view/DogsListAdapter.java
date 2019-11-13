@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.visualsharp.dogsapp.R;
 import com.visualsharp.dogsapp.model.DogBreed;
+import com.visualsharp.dogsapp.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +44,7 @@ public class DogsListAdapter extends RecyclerView.Adapter<DogsListAdapter.DogVie
 
         name.setText(dogsList.get(position).dogBreed);
         lifespan.setText(dogsList.get(position).lifeSpan);
+        Util.loadImage(image, dogsList.get(position).imageUrl, Util.getProgressDrawable(image.getContext()));
     }
 
     @Override
