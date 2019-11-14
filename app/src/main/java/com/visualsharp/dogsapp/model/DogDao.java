@@ -9,7 +9,7 @@ import java.util.List;
 @Dao
 public interface DogDao {
     @Insert
-    List<Integer> insertAll(DogBreed... dogs);
+    List<Long> insertAll(DogBreed... dogs);
 
     @Query("SELECT * FROM dogbreed")
     List<DogBreed> getAllDogs();
