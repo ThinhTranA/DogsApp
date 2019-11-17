@@ -20,7 +20,7 @@ import com.visualsharp.dogsapp.util.Util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DogsListAdapter extends RecyclerView.Adapter<DogsListAdapter.DogViewHolder> {
+public class DogsListAdapter extends RecyclerView.Adapter<DogsListAdapter.DogViewHolder> implements DogClickListener {
 
     private ArrayList<DogBreed> dogsList;
     public  DogsListAdapter(ArrayList<DogBreed> dogList){
@@ -44,20 +44,16 @@ public class DogsListAdapter extends RecyclerView.Adapter<DogsListAdapter.DogVie
     @Override
     public void onBindViewHolder(@NonNull DogViewHolder holder, int position) {
         holder.itemView.setDog(dogsList.get(position));
+        holder.itemView.setListener(this::onDogClicked);
+    }
 
-//        ImageView image = holder.itemView.findViewById(R.id.imageView);
-//        TextView name = holder.itemView.findViewById(R.id.name);
-//        TextView lifespan = holder.itemView.findViewById(R.id.lifespan);
-//        LinearLayout layout = holder.itemView.findViewById(R.id.dogLayout);
-//
-//        name.setText(dogsList.get(position).dogBreed);
-//        lifespan.setText(dogsList.get(position).lifeSpan);
-//        Util.loadImage(image, dogsList.get(position).imageUrl, Util.getProgressDrawable(image.getContext()));
-//        layout.setOnClickListener(v -> {
-//            ListFragmentDirections.ActionDetail action = ListFragmentDirections.actionDetail();
-//            action.setDogUuid(dogsList.get(position).uuui);
-//            Navigation.findNavController(layout).navigate(action);
-//        });
+    @Override
+    public void onDogClicked(View v) {
+        String uuidString =((TextView) v.findViewById(R.id.dogId)).getText().toString();
+        int uuid = Integer.valueOf(uuidString);
+        ListFragmentDirections.ActionDetail action = ListFragmentDirections.actionDetail();
+            action.setDogUuid(uuid);
+            Navigation.findNavController(v).navigate(action);
     }
 
     @Override
